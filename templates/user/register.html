@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-md bg-whitegreen mx-auto align-middle h-50 w-75 row" style="margin-top: 50px;">
+    <div class="ml-3 mr-3 col align-self-center"> 
+      <div class="mb-4 text-center text-primary"><h2>Enter below to register!</h2> </div>
+
+      <form name="register_form" class="w-50 float-left">
+      <div class="mb-3">
+        <label for="inputIdRegister" class="form-label">Id</label>
+        <input type="text" class="form-control " id="inputIdRegister" placeholder="abc1234" name="user_id">
+      </div>
+      <div class="mb-3">
+        <label for="inputPwRegister" class="form-label">Password</label>
+        <input type="password" class="form-control " id="inputPwRegister" placeholder="abc!@#12345" name="user_pw">
+      </div>
+      <div class="mb-3">
+        <label for="inputNicknameRegister" class="form-label">Nickname</label>
+        <input type="text" class="form-control" id="inputNicknameRegister" placeholder="Avengers-1" name="user_nickname">
+      </div>
+      <div class="mb-4">
+        <label for="inputFavoriteFoodRegister" class="form-label">Favorite food</label>
+        <input type="text" class="form-control" id="inputFavoriteFoodRegister" placeholder="spaghetti" name="favorite_food">
+      </div>
+      <div class="row">
+        <div class="col-2"><button type="button" class="btn btn-primary" id="buttonForRegister" onclick="buttonForRegisterClicked()">Thanks!</button></div>
+      </div>
+      </form>
+      <div class="w-50 container float-left h-75 row align-items-center">
+        <div class="col"><p class="fs-3 fw-bolder text-center text-danger error-hidden" id="errorMessage"></p></div>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='/js/scripts.js') }}"> </script>
+{% endblock %}
+
+{% block scripts %} 
+  document.querySelector('#registerButton').classList.remove('btn-outline-info');
+  document.querySelector('#registerButton').classList.add('btn-info');
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+      <div class="col-12">
+          <h1 class="display-4">Have a good day {{ user['user_nickname'] }}!</h1>
+      </div>
+      <hr>
+    </div>
+</div>
+<div class="container-fluid padding">
+    <div class="row padding">
+        <div class="col-md-4" onclick="linkMyFoodList()">
+            <div class="card hoverOpacity">
+                <img class="card-img-top" src="/static/image/pastel-photo/donut.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">My food list!</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" onclick="linkMyNote()">
+            <div class="card hoverOpacity">
+                <img class="card-img-top" src="/static/image/pastel-photo/note.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">My Note!</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" onclick="linkMyFoodList()">
+            <div class="card hoverOpacity ">
+                <img class="card-img-top" src="/static/image/pastel-photo/flower.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">Service coming soon</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" onclick="linkMyFoodList()">
+            <div class="card hoverOpacity">
+                <img class="card-img-top" src="/static/image/pastel-photo/trip.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">Service coming soon</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" onclick="linkMyFoodList()">
+            <div class="card hoverOpacity">
+                <img class="card-img-top" src="/static/image/pastel-photo/bg.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">Service coming soon</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" onclick="linkMyFoodList()">
+            <div class="card hoverOpacity">
+                <img class="card-img-top" src="/static/image/pastel-photo/book.png" alt="pastel-bg">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-0">Service coming soon</h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
