@@ -73,9 +73,9 @@
 #3347ff">{{ food.created_date }}</span></label>
                 </div>
                 <div class="row mt-2 mx-1 ">
-                    <button type="submit" class="btn btn-success ml-3 mb-2" id="editFoodList">&nbsp;Edit&nbsp;</button>
+                    <button type="submit" class="btn btn-success ml-3 mb-2 notReadyYet" id="editFoodList">&nbsp;Edit&nbsp;</button>
                     <button type="submit" class="btn btn-success ml-3 mb-2 deleteFoodList" id="{{ food["_id"]  }}">Delete</button>
-                    <button type="submit" class="btn btn-success ml-3 mb-2" id="togglePrivatePublic">Private</button>
+                    <button type="submit" class="btn btn-success ml-3 mb-2 notReadyYet" id="togglePrivatePublic">Private</button>
                 </div>
     
 
@@ -89,9 +89,11 @@
 
 {% block scripts %}
 document.getElementById('newFoodAdd').addEventListener("click",addNewFood,false)
-document.getElementById('editFoodList').addEventListener("click",notReadyYet,false)
-document.getElementById('togglePrivatePublic').addEventListener("click",notReadyYet,false)
 
+var not_ready_buttons = document.getElementsByClassName('notReadyYet')
+for(i=0;i < not_ready_buttons.length;i++){
+       not_ready_buttons[i].addEventListener("click",notReadyYet,false);
+    }
 
 var delete_buttons = document.getElementsByClassName('deleteFoodList')
 for(i=0;i < delete_buttons.length;i++){
