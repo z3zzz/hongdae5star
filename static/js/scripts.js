@@ -194,3 +194,7 @@ deleteFood = (e) => {
     })
 }
 
+notReadyYet = () => {
+    alert("This page or function is not ready yet.. will update soon!");
+    return;
+}

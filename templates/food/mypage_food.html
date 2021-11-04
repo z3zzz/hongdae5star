@@ -89,6 +89,9 @@
 
 {% block scripts %}
 document.getElementById('newFoodAdd').addEventListener("click",addNewFood,false)
+document.getElementById('editFoodList').addEventListener("click",notReadyYet,false)
+document.getElementById('togglePrivatePublic').addEventListener("click",notReadyYet,false)
+
 
 var delete_buttons = document.getElementsByClassName('deleteFoodList')
 for(i=0;i < delete_buttons.length;i++){
