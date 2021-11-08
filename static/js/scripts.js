@@ -194,11 +194,18 @@ deleteFood = (e) => {
     })
 }
 
+addDeleteFoodListFunction = elem => {
+    elem.addEventListener("click",deleteFood)
+}
+
 notReadyYet = () => {
     alert("This page or function is not ready yet.. will update soon!");
     return;
 }
 
+addNotReadyFunction = elem => {
+    elem.addEventListener("click",notReadyYet)
+}
 
 togglePrivatePublicStatus = e => {
     let elem = e.target
@@ -255,6 +262,20 @@ addBackgroundForFoodList = elem => {
     }
 }
 
+let notReadyElements = document.querySelectorAll('.notReadyYet')
+notReadyElements.forEach(addNotReadyFunction)
+
+let deleteFoodButtons = document.querySelectorAll('.deleteFoodList')
+deleteFoodButtons.forEach(addDeleteFoodListFunction)
+
+let addNewFoodButton = document.querySelector('#newFoodAdd')
+if(addNewFoodButton) addNewFoodButton.addEventListener("click", addNewFood)
+
+let toggle_buttons = document.querySelectorAll('.togglePrivatePublic')
+toggle_buttons.forEach(addToggleProperty)
+
+let divsForBackground = document.querySelectorAll(".cardBackgroundColor")
+divsForBackground.forEach(addBackgroundForFoodList)
 
 
 

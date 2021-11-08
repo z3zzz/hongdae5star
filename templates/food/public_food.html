@@ -49,22 +49,6 @@
 
 {% block scripts %}
 
-let divsForBackground = document.querySelectorAll(".cardBackgroundColor")
-divsForBackground.forEach(addBackgroundForFoodList)
-
-let not_ready_buttons = document.getElementsByClassName('notReadyYet')
-for(i=0;i < not_ready_buttons.length;i++){
-       not_ready_buttons[i].addEventListener("click",notReadyYet,false);
-    }
-
-
-let delete_buttons = document.getElementsByClassName('deleteFoodList')
-for(i=0;i < delete_buttons.length;i++){
-       delete_buttons[i].addEventListener("click",deleteFood,false);
-    }
-
-let toggle_buttons = document.querySelectorAll('.togglePrivatePublic')
-toggle_buttons.forEach(addToggleProperty)
 
 
 {% endblock %}
