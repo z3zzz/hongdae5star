@@ -6,7 +6,7 @@
     <div class="row padding bg-whitepurple">
         {% for food in foods %}
         <div class="col-lg-4">
-            <div class="card p-2 bg-whitegreen" id="backgroundColor">
+            <div class="card p-2 cardBackgroundColor" data-foodlist_author="{{ food["author"] }}" data-current_user="{{ session["current_user"] }}">
                 <div class="row mt-1 mx-1 mb-1">
                     <label class="col-lg col-form-label py-1">Store name: <span style="font-weight: bold; color: 
 #3347ff">{{ food.store_name }}</span></label>
@@ -49,14 +49,16 @@
 
 {% block scripts %}
 
+let divsForBackground = document.querySelectorAll(".cardBackgroundColor")
+divsForBackground.forEach(addBackgroundForFoodList)
 
-var not_ready_buttons = document.getElementsByClassName('notReadyYet')
+let not_ready_buttons = document.getElementsByClassName('notReadyYet')
 for(i=0;i < not_ready_buttons.length;i++){
        not_ready_buttons[i].addEventListener("click",notReadyYet,false);
     }
 
 
-var delete_buttons = document.getElementsByClassName('deleteFoodList')
+let delete_buttons = document.getElementsByClassName('deleteFoodList')
 for(i=0;i < delete_buttons.length;i++){
        delete_buttons[i].addEventListener("click",deleteFood,false);
     }

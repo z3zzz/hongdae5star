@@ -247,7 +247,13 @@ addToggleProperty = elem => {
     elem.addEventListener("click", togglePrivatePublicStatus)
 }
 
-
+addBackgroundForFoodList = elem => {
+    if(elem.dataset.foodlist_author == elem.dataset.current_user){
+        elem.classList.add("bg-whitegreen")
+    }else{
+        elem.classList.add("bg-whiteBlue")
+    }
+}
 
 
 
