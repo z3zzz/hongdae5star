@@ -65,6 +65,26 @@ class Foodlist:
 
         return jsonify({"result": "Failed to delete the food.. sorry"})
 
+    def toggle_private_public(self, user, requested):
+        current_status = requested["isPrivate"]
+        food_to_toggle = food_list.find_one({"_id": requested["food_id"]})
+
+        if not food_to_toggle:
+            return jsonify({"result":"Failed to find the requested food from food list"}), 400
+        if food_to_toggle['author'] != user["_id"]:
+            return jsonify({"result":"You are not the author of this food list, so cannot modify this"}), 401
+
+        if current_status == "True":
+            if food_list.update_one({"_id":requested["food_id"]}, {"$set":{"isPrivate":False}}):
+                return jsonify({"result":"Successfully upadted private -> public status!"}), 200
+            else:
+                return jsonify({"result":"Failed to update the food"}), 400
+        else:
+            if food_list.update_one({"_id":requested["food_id"]}, {"$set":{"isPrivate":True}}):
+                return jsonify({"result":"Successfully upadted public -> private  status!"}), 200
+            else:
+                return jsonify({"result":"Failed to update the food"}), 400
+
 
 
 

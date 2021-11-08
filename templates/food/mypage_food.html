@@ -36,8 +36,11 @@
     </div>
 </div>
 <div class="container-fluid padding">
-    <div class="row welcome text-center">
-      <div class="col-12">
+    <div class="row welcome">
+      <div class="col-3">
+          <button type="button" class="btn btn-lg btn-warning"  onclick="window.location.href='/foodlist/public'">Let's Share!</button>
+      </div>
+      <div class="col-6 text-center">
           <h2 class="">My food list</h2>
       </div>
       <hr>
@@ -75,13 +78,20 @@
                 <div class="row mt-2 mx-1 ">
                     <button type="submit" class="btn btn-success ml-3 mb-2 notReadyYet" id="editFoodList">&nbsp;Edit&nbsp;</button>
                     <button type="submit" class="btn btn-success ml-3 mb-2 deleteFoodList" id="{{ food["_id"]  }}">Delete</button>
-                    <button type="submit" class="btn btn-success ml-3 mb-2 notReadyYet" id="togglePrivatePublic">Private</button>
+                    <button type="submit" class="btn ml-3 mb-2 togglePrivatePublic" data-food_status="{{ food.isPrivate }}"  id="{{ food["_id"] }}"  ></button>
                 </div>
     
-
-
             </div>
         </div>
+
+        <script>
+
+
+
+
+
+        </script>
+
         {% endfor %}
     </div>
 
@@ -90,14 +100,19 @@
 {% block scripts %}
 document.getElementById('newFoodAdd').addEventListener("click",addNewFood,false)
 
-var not_ready_buttons = document.getElementsByClassName('notReadyYet')
+let not_ready_buttons = document.getElementsByClassName('notReadyYet')
 for(i=0;i < not_ready_buttons.length;i++){
        not_ready_buttons[i].addEventListener("click",notReadyYet,false);
     }
 
-var delete_buttons = document.getElementsByClassName('deleteFoodList')
+let delete_buttons = document.getElementsByClassName('deleteFoodList')
 for(i=0;i < delete_buttons.length;i++){
        delete_buttons[i].addEventListener("click",deleteFood,false);
     }
+
+let toggle_buttons = document.querySelectorAll('.togglePrivatePublic')
+toggle_buttons.forEach(addToggleProperty)
+
+
 
 {% endblock %}
