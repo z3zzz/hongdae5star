@@ -198,3 +198,59 @@ notReadyYet = () => {
     alert("This page or function is not ready yet.. will update soon!");
     return;
 }
+
+
+togglePrivatePublicStatus = e => {
+    let elem = e.target
+    let current_status = elem.dataset.food_status
+    let food_id = elem.id
+
+    let data = {
+        "isPrivate": current_status,
+        "food_id": food_id
+    }
+
+    $.ajax({
+        url: "/mypage/foodlist",
+        type: "patch",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: (res) => {
+            console.log(res["result"])
+        },
+        error: (res) => {
+            console.log(res["result"])
+        }
+    })
+
+    if(current_status=="True"){
+        elem.innerText="Public"
+        elem.classList.remove("btn-info")
+        elem.classList.add("btn-success")
+        elem.dataset.food_status="False"
+    }else{
+        elem.innerText="Private"
+        elem.classList.remove("btn-success")
+        elem.classList.add("btn-info")
+        elem.dataset.food_status="True"
+    }
+}
+
+addToggleProperty = elem => {
+    if(elem.dataset.food_status=="True"){
+        elem.innerText="Private"
+        elem.classList.add("btn-info")
+    }else{
+        elem.innerText="Public"
+        elem.classList.add("btn-success")
+    }
+    elem.addEventListener("click", togglePrivatePublicStatus)
+}
+
+
+
+
+
+
+
+
