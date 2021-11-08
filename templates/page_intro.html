@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- jumbotron message -->
+{% block content %}
+  <div class="mt-5 ml-5 mb-0 pb-4 w-50 jumbotron bg-white">
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">Thank you for visiting our website, this website is going to serve you many useful experiences and informations about Hong-dae restaurants.</p>
+    <hr class="my-4">
+    <p>Services will be soon available, during October 2021. We will let you know when the services are ready through email, so click below button to write one!</p>
+    <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#popoverEmail" aria-expanded="false" aria-controls="popoverEmail">Let's email!</button>
+  </div> 
+  <div id="popoverEmail" class="collapse">
+  <div class="card-body bg-whiteblue w-50" style="margin-left: 75px; height: 12rem;">
+    <div class="mb-3">
+      <label class="form-label">What is your email?</label>
+      <textarea id="emailForAlert" class="form-control w-75" rows="1" placeholder="abc@example.com"></textarea>
+    </div>
+    <button class="btn btn-outline-info mt-2" onclick="email_for_alert()">Thanks!</button>
+  </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  document.querySelector('#pageIntroButton').classList.remove('btn-outline-primary')
+  document.querySelector('#pageIntroButton').classList.add('btn-primary')
+
+{% endblock %}
+

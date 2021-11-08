@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-md bg-whitepurple mx-auto align-middle h-50 w-75 row" style="margin-top: 50px;">
+    <div class="ml-3 mr-3 col align-self-start"> 
+      <div class="h-25 pt-3 row-align-items-start">
+        <div class="col text-center text-primary"><h2>Enter below to login!</h2> </div>
+      </div>
+      <form name="login_form" class="w-50 float-left">
+      <div class="mb-3">
+        <label for="inputIdLogin" class="form-label">Id</label>
+        <input type="text" class="form-control " id="inputIdLogin" placeholder="abc1234" name="user_id">
+      </div>
+      <div class="mb-3">
+        <label for="inputPwLogin" class="form-label">Password</label>
+        <input type="password" class="form-control " id="inputPwLogin" placeholder="abc!@#12345" name="user_pw">
+      </div>
+      <div class="row">
+        <div class="col-2"><button type="button" class="btn btn-primary" id="buttonForLogin" onclick="buttonForLoginClicked()">Welcome!</button></div>
+      </div>
+      </form>
+      <div class="w-50 container float-left h-25 row align-items-end">
+        <div class="col"><p class="fs-3 fw-bolder text-center text-danger error-hidden" id="errorMessage"></p></div>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='/js/scripts.js') }}"> </script>
+{% endblock %}
+
+{% block scripts %} 
+  document.querySelector('#loginButton').classList.remove('btn-outline-success');
+  document.querySelector('#loginButton').classList.add('btn-success');
+
+{% endblock %}
