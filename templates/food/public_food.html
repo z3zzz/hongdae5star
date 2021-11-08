@@ -2,15 +2,47 @@
 
 {% block content %}
 
-
-
-
-
-
-
-
-
-
+<div class="container-fluid padding">
+    <div class="row padding bg-whitepurple">
+        {% for food in foods %}
+        <div class="col-lg-4">
+            <div class="card p-2 bg-whitegreen" id="backgroundColor">
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1">Store name: <span style="font-weight: bold; color: 
+#3347ff">{{ food.store_name }}</span></label>
+                </div>
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1">Menu: <span style="font-weight: bold; color: 
+#3347ff">{{ food.menu }}</span></label>
+                </div>
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1">Location: <span style="font-weight: bold; color: 
+#3347ff">{{ food.location }}</span></label>
+                </div>
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1">Extra info:</label>
+                </div>
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1"><span style="font-weight: bold; color: 
+                                  #3347ff"> -> {{ food.additional_info }}</span></label>
+                </div>
+                <div class="row mt-1 mx-1 mb-1">
+                    <label class="col-lg col-form-label py-1">Updated Date: <span style="font-weight: bold; color: 
+#3347ff">{{ food.created_date }}</span></label>
+                </div>
+                <div class="row mt-2 mx-1 ">
+                    <button type="submit" class="btn btn-success ml-3 mb-2 addComment notReadyYet" id="{{ food["_id"]  }}">Comment</button>
+                    <button type="submit" class="btn btn-warning ml-3 mb-2 notReadyYet" id="{{ food["_id"] }}">Likes</button>
+                    <button type="submit" class="btn btn-warning ml-3 mb-2 notReadyYet" id="{{ food["_id"] }}">Stars</button>
+                    {% if food["author"] == session["current_user"] %}
+                    <button type="submit" class="btn ml-3 mb-2 togglePrivatePublic" data-food_status="{{ food.isPrivate }}" id="{{ food["_id"] }}"  ></button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 
 {% endblock %} 
@@ -18,14 +50,19 @@
 {% block scripts %}
 
 
+var not_ready_buttons = document.getElementsByClassName('notReadyYet')
+for(i=0;i < not_ready_buttons.length;i++){
+       not_ready_buttons[i].addEventListener("click",notReadyYet,false);
+    }
 
 
+var delete_buttons = document.getElementsByClassName('deleteFoodList')
+for(i=0;i < delete_buttons.length;i++){
+       delete_buttons[i].addEventListener("click",deleteFood,false);
+    }
 
-
-
-
-
-
+let toggle_buttons = document.querySelectorAll('.togglePrivatePublic')
+toggle_buttons.forEach(addToggleProperty)
 
 
 {% endblock %}
