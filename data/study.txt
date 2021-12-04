@@ -1,0 +1,40 @@
+3. css 기초 정리 - media@, animation
+ animation library https://www.youtube.com/watch?v=0kmFlBJIUkQ 
+
+5. Seo 적용
+6. Window 도 object 이므로 global property 새로 만들 수 있다.
+7. hexadecimal 이해하기 
+https://www.rapidtables.com/convert/number/decimal-to-hex.html?x=100
+
+8. javascript 추가 공부 
+https://www.makeuseof.com/tag/es6-javascript-programmers-need-know/
+
+9. 홈화면 설명페이지로 따로 만들기 애니메이션 슬라이드 스크롤, 
+스크롤 하라는 팝업 후 스크롤 다 히면 클릭하라는 팝업
+-참고 https://clova.ai/ko     https://reactjs.org/      https://toss.im/    https://discord.com/nitro
+mongoexport --db final_data --collection line_graph --out line_graph.jso
+https://dogstudio.co/studio/
+https://dogstudio.co/careers/
+
+<공부하기>
+
+4. 엘리스 강의 class inheritance
+
+5. Bocket js, 서버는 안보이게 해야 보안?, iframe, js best ui library 검색해보고 괜찮은거 보이면 쓴다. 
+
+7. Process thread 공부
+8. Github commitment 방법, 페이지 관리하는 방법 검색해서 배우기 
+9. pre-fetch?
+
+<정리할 것>
+1. hexadecimal
+2. css 영상 본건 다 정리 
+ - css 4종세트
+ - 애니메이션 https://www.youtube.com/watch?v=YszONjKpgg4&list=PLZlA0Gpn_vH8mpXIUHjWoMAAgoCEinL0R
+ - css 강의 목록 https://www.youtube.com/watch?v=S-VeYcOCFZw&list=PLZlA0Gpn_vH8mpXIUHjWoMAAgoCEinL0R&index=2
+ 
+
+<추가배운것>
+1. react로 구성된 페이지는 일반 html 보는 방식으로 볼 수 없다. react 개발자도구 크롬 익스텐션 따로 써야 한다.
+2. 개발자도구에서 props의 컴포넌트들을 바꾸면 html이 바뀐다. 
+3. tdd 는 사람마다 정말 방식이 제각각이고 능력에 따라 다르다.  유닛테스트, e2e테스트 각각 툴이 있다. 유닛테스트는 그 언어로 해야되고, e2e는 편한걸로 하면 된다. 웹사이트에 나온 결과를 스크래핑해서 db 값과 일치하는지 비교하는 것이 테스트다. 
