@@ -262,6 +262,41 @@ addBackgroundForFoodList = elem => {
     }
 }
 
+saveNote = async e => {
+    let user_id = e.target.dataset.user_id
+    let note1 = document.querySelector('#note1').value
+    let note2 = document.querySelector('#note2').value
+    let note3 = document.querySelector('#note3').value
+    let note4 = document.querySelector('#note4').value
+
+    let data = {
+            _id: user_id,
+            note1: note1,
+            note2: note2,
+            note3: note3,
+            note4: note4
+        }
+
+    res = await fetch('/mypage/note', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    temp = await res.json()
+    console.log(temp)
+    let messageSpace = document.querySelector('#spaceForSaveCompletedMessage')
+    messageSpace.classList.remove('fade-out')
+    messageSpace.style.opacity = null
+    messageSpace.innerText = temp.result
+    messageSpace.style.color = 'blue'
+    setTimeout(() => {
+        messageSpace.classList.add('fade-out')
+    }, 100)
+}
+
+
 let notReadyElements = document.querySelectorAll('.notReadyYet')
 notReadyElements.forEach(addNotReadyFunction)
 
@@ -277,7 +312,8 @@ toggle_buttons.forEach(addToggleProperty)
 let divsForBackground = document.querySelectorAll(".cardBackgroundColor")
 divsForBackground.forEach(addBackgroundForFoodList)
 
+let noteButton = document.querySelector('#buttonForNoteSave')
+if (noteButton) noteButton.addEventListener("click", saveNote)
 
 
-
-
+console.log(window.location)

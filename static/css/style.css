@@ -2,6 +2,11 @@
 
 
 /*----my own customize css ---- */
+.enter{
+    white-space: pre-wrap;
+}
+
+
 .nav-rightside {
     text-align: right;
 }
@@ -35,8 +40,18 @@ body {
     height: 3rem;
 }
 
+/*---Fade in, Fade Out ---- */
 
+.fade-out {
+    opacity: 1;
+    animation: fade 1s linear;
+    opacity: 0;
+}
 
+@keyframes fade {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
