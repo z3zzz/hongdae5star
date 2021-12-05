@@ -33,6 +33,8 @@ https://dogstudio.co/careers/
  - 애니메이션 https://www.youtube.com/watch?v=YszONjKpgg4&list=PLZlA0Gpn_vH8mpXIUHjWoMAAgoCEinL0R
  - css 강의 목록 https://www.youtube.com/watch?v=S-VeYcOCFZw&list=PLZlA0Gpn_vH8mpXIUHjWoMAAgoCEinL0R&index=2
  
+3. 웹페이지 반성 + 밀린 공부할것 리스트 정리 + 차주계획 세우기  --- 문자 쓴것, 홍대닷컴 쓴 것, 프로젝트하면서 배운것 깨달은것 정리
+ - db 설계의 중요성 등
 
 <추가배운것>
 1. react로 구성된 페이지는 일반 html 보는 방식으로 볼 수 없다. react 개발자도구 크롬 익스텐션 따로 써야 한다.
