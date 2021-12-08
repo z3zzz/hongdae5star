@@ -28,6 +28,9 @@ https://dogstudio.co/careers/
 10. Cpu kernel shell 등 os 
 https://youtu.be/vqs_0W-MSB0
 
+11. node js server 
+https://www.youtube.com/watch?v=VShtPwEkDD0&list=PLZlA0Gpn_vH9xx-RRVNG187ETT2ekWFsq&index=13
+
 <정리할 것>
 1. hexadecimal
 2. css 영상 본건 다 정리 
