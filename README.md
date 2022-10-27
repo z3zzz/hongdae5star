@@ -31,6 +31,7 @@
 1. 기획 및 GCP VM, Linux(Ubuntu), MariaDB, Python, WSGI, Apache2 인프라 기반 백엔드 서버 구축 및 배포
 2. TLS (OpenSSL)를 통한 보안 적용 / DNS, SEO 적용을 통한 서치엔진 대응 및 사용자 유입  
 3. Jinja2 Template 기반 데이터 처리 및 페이지 렌더링 
+4. 기능별 코드 모듈화, 협업 및 확장성 확보
 
 ## 사용 기술
 * Flask 2.2
