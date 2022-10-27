@@ -19,3 +19,5 @@ def page_intro():
 app.register_blueprint(bp_user)
 app.register_blueprint(bp_food)
 app.register_blueprint(bp_note)
+
+app.run()
